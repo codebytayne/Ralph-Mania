@@ -1,54 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-
-  <!-- settings -->
+  <!-- Configurações -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detona Ralph</title>
+  <title>Ralph Mania</title>
+  <link rel="icon" href="src/images/favicon.png" type="image/png">
 
-  <!-- fonts -->
+  <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Press+Start+2P&display=swap" rel="stylesheet">
 
-  <!-- styles -->
+  <!-- Estilos -->
   <link rel="stylesheet" href="./src/styles/reset.css">
   <link rel="stylesheet" href="./src/styles/main.css">
 </head>
-
 <body>
+  <!-- Modal de Introdução -->
+  <div id="intro-modal" class="modal">
+    <div class="modal-content">
+      <h1 style="color: #ff0000;">Ralph Mania!</h1>
+      <p style="color: #ffffff;">Como jogar: Clique nos inimigos para marcar pontos. Evite clicar nos quadrados errados.</p>
+      <button id="start-game-button" style="margin: 10px">Start Game</button>
+    </div>
+  </div>
 
-  <div class="container">
+  <div id="game-container" class="container">
+    <!-- Menu -->
     <div class="menu">
-      <div class="menu-time">
-        <h2 style="color: red;">Time Left</h2>
-        <h2 id="time-left">0</h2>
+      <!-- Título -->
+      <div class="menu-title">
+        <h1 style="color: #ff0000; font-family: 'Press Start 2P', cursive;">Ralph Mania</h1>
       </div>
-      <div class="menu-score">
-        <h2 style="color: red;">Your Score</h2>
-        <h2 id="score">0</h2>
+
+      <!-- Tempo Restante -->
+      <div class="menu-item menu-time">
+        <img src="./src/images/timeicon.png" alt="Ícone de tempo restante" width="20px" height="20px" />
+        <h2 style="color: #ffffff;">Time Left</h2>
+        <span id="time-left">00:00</span>
       </div>
-      <div class="menu-lives">
-        <img src="./src/images/player.png" alt="foto do jogador" height="60px" />
-        <h2>x3</h2>
+
+      <!-- Pontuação -->
+      <div class="menu-item menu-score">
+        <img src="./src/images/scoreicon.png" alt="Ícone de pontuação" width="20px" height="20px" />
+        <h2 style="color: #ffffff;">Your Score</h2>
+        <span id="score">0</span>
+      </div>
+
+      <!-- Vidas -->
+      <div class="menu-item menu-lives">
+        <img src="./src/images/livesicon.png" alt="Ícone de vidas restantes" width="20px" height="20px" />
+        <h2 style="color: #ffffff;">Lives</h2>
+        <span id="lives-count">x5</span>
       </div>
     </div>
 
+    <!-- Painel do Jogo -->
     <div class="panel">
       <div class="panel-row">
-        <div class="square " id="1"></div>
+        <div class="square" id="1"></div>
         <div class="square" id="2"></div>
         <div class="square" id="3"></div>
       </div>
-
       <div class="panel-row">
         <div class="square enemy" id="4"></div>
         <div class="square" id="5"></div>
         <div class="square" id="6"></div>
       </div>
-
       <div class="panel-row">
         <div class="square" id="7"></div>
         <div class="square" id="8"></div>
@@ -56,8 +75,6 @@
       </div>
     </div>
   </div>
-
   <script defer src="./src/scripts/engine.js"></script>
 </body>
-
 </html>

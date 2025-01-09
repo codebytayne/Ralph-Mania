@@ -1,7 +1,11 @@
+@font-face {
+  font-family: "SuperMario";
+  src: url("../fontes/SuperMario.ttf") format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: "Bebas Neue", sans-serif; */
-  font-family: "Press Start 2P", cursive;
+  font-family: "SuperMario", "Press Start 2P", cursive;
 }

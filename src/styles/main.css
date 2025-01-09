@@ -1,3 +1,5 @@
+/* main.css */
+
 .container {
   display: flex;
   flex-direction: column;
@@ -9,12 +11,51 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
-  height: 90px;
+  height: 120px; /* Ajustado para 120px */
   width: 100%;
-  background-color: #000000;
+  background-color: #6e2c00;
+  background-image: url("../images/imgbgrd.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #ffffff;
-  border-bottom: 5px solid #ffd700;
+  border-bottom: 5px solid #ffffff;
+
+  /* Sombra na parte inferior */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.menu-title h1 {
+  text-shadow: 2px 2px 0 black, -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black;
+}
+
+/* Define o estilo para todos os itens dentro do menu, exceto o h1 */
+.menu *:not(h1) {
+  font-size: 16px; /* Tamanho da fonte para todos os itens exceto o h1 */
+  text-shadow: 1px 1px 2px black; /* Efeito de sombra preto */
+}
+
+/* Centraliza ícones e texto nas classes menu-time, menu-score e menu-lives */
+.menu-time, 
+.menu-score, 
+.menu-lives {
+  display: flex;
+  align-items: center; /* Alinha verticalmente ao centro */
+  text-align: left; /* Texto alinhado à esquerda para consistência */
+  gap: 8px; /* Espaço consistente entre ícone e texto */
+}
+
+.menu-time img,
+.menu-score img,
+.menu-lives img {
+  width: 20px;
+  height: 20px;
+}
+
+.menu-time h2,
+.menu-score h2,
+.menu-lives h2 {
+  margin: 0; /* Remove margens extras */
 }
 
 .panel {
@@ -27,8 +68,10 @@
 .square {
   height: 150px;
   width: 150px;
-  border: 1px solid #000000;
+  border: 3px solid #410817;
+  border-radius: 16px;
   background-color: #1aeaa5;
+  margin: 10px; /* Ajuste conforme necessário */
 }
 
 .enemy {
@@ -36,13 +79,74 @@
   background-size: cover;
 }
 
-.menu-lives {
+/* Ícones de Configurações e Ranking */
+.bottom-left {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 10px;
 }
 
-.menu-time h2:nth-child(2),
-.menu-score h2:nth-child(2) {
-  margin-top: 1rem;
+/* Estilo das Janelas Modais */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  background-color: #486fb1;
+  border: 3px solid #000;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  text-align: center;
+}
+
+.modal-content {
+  margin: 20px;
+}
+
+.modal h1{
+  text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black;
+}
+
+.modal h2, .modal h1 {
+  margin-bottom: 20px;
+}
+
+.modal p {
+  margin-bottom: 20px;
+}
+
+input#nickname {
+  width: calc(100% - 20px); /* Ajuste a largura conforme necessário */
+  padding: 10px;
+  margin: 0 auto; /* Centraliza o input */
+  display: block;
+  box-sizing: border-box; /* Inclui padding e border no total width */
+  border-radius: 5px; /* Arredonda os cantos */
+  font-size: 16px; /* Tamanho da fonte */
+  border: 2px solid #ccc; /* Bordas */
+}
+
+.modal button {
+  background-color: #fc3b19;
+  color: rgba(255, 255, 255, 0.699);
+  border: 3px solid #ffffff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background-color: #ff4500;
+}
+
+/* Estilo para o efeito de desfoque */
+.blur {
+  filter: blur(5px);
 }
