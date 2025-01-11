@@ -3,6 +3,8 @@
 
 Bem-vindo ao **Ralph Mania**! Neste repositório, você encontrará um jogo divertido baseado no famoso filme "Detona Ralph". Este projeto não apenas oferece entretenimento, mas também demonstra várias técnicas avançadas de desenvolvimento de jogos em JavaScript. Criado para fins educacionais.
 
+🔗 https://codebytayne.github.io/Ralph-Mania/
+
 ### Tecnologias Utilizadas
 
 - **HTML5** e **CSS3**: Estrutura e aparência do jogo.
